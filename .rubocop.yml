@@ -46,3 +46,6 @@ Style/EachWithObject:
 
 Metrics/MethodLength:
   Max: 7
+
+Style/EmptyMethod:
+  Enabled: false
