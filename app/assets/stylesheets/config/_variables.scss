@@ -28,16 +28,17 @@
   --space-xxxl: 3rem; // 48px
   --space-xxxxl: 4rem; // 64px
 
-  --color-primary: hsl(350, 67%, 50%);
-  --color-primary-rotate: hsl(10, 73%, 54%);
+  --color-primary: hsl(199, 67%, 60%);
+  --color-primary-rotate: hsl(217, 73%, 54%);
   --color-primary-bg: hsl(0, 85%, 96%);
-  --color-secondary: hsl(101, 45%, 56%);
-  --color-secondary-rotate: hsl(120, 45%, 56%);
+  --color-secondary: hsl(0, 0%, 56%);
+  --color-secondary-rotate: hsl(0, 0%, 36%);
   --color-tertiary: hsl(49, 89%, 64%);
-  --color-glint: hsl(210, 100%, 82%);
+  --color-glint: hsl(200, 30%, 70%);
+  --color-error: hsl(350, 67%, 50%);
 
   --color-white: hsl(0, 0%, 100%);
-  --color-background: hsl(30, 50%, 98%);
+  --color-background: hsl(216, 50%, 98%);
   --color-light: hsl(0, 6%, 93%);
   --color-dark: var(--color-text-header);
 

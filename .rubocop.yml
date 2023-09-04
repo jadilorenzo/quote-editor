@@ -16,7 +16,7 @@ Metrics/BlockLength:
   Exclude:
     - 'Rakefile'
     - '**/*.rake'
-    # - 'spec/*.rb'
+    - 'spec/**/*_spec.rb'
 
 # Hard to make this pass always and want to keep flexibility
 Layout/ArrayAlignment:

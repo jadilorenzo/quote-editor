@@ -2,24 +2,13 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Quotes', type: :system do
+RSpec.describe 'Quotes', type: :system, js: true do
   before do
-    driven_by(:rack_test)
+    driven_by(:selenium_chrome_headless)
   end
 
   setup do
     @quote = FactoryBot.create(:quote)
-  end
-
-  it 'creates a new quote' do
-    visit quotes_path
-    assert_selector 'h1', text: 'Quotes'
-    click_on 'New quote'
-    assert_selector 'h1', text: 'New quote'
-    fill_in 'Name', with: 'ABC quote'
-    click_on 'Create quote'
-    assert_selector 'h1', text: 'Quotes'
-    assert_text 'ABC quote'
   end
 
   it 'shows a quote' do
@@ -29,14 +18,28 @@ RSpec.describe 'Quotes', type: :system do
     assert_selector 'h1', text: @quote.name
   end
 
+  it 'creates a new quote' do
+    visit quotes_path
+    assert_selector 'h1', text: 'Quotes'
+
+    click_on 'New quote'
+    fill_in 'Name', with: 'Capybara quote'
+
+    assert_selector 'h1', text: 'Quotes'
+    click_on 'Create quote'
+
+    assert_selector 'h1', text: 'Quotes'
+    assert_text 'Capybara quote'
+  end
+
   it 'updates a quote' do
     visit quotes_path
     assert_selector 'h1', text: 'Quotes'
 
     click_on 'Edit', match: :first
-    assert_selector 'h1', text: 'Edit quote'
-
     fill_in 'Name', with: 'Updated quote'
+
+    assert_selector 'h1', text: 'Quotes'
     click_on 'Update quote'
 
     assert_selector 'h1', text: 'Quotes'

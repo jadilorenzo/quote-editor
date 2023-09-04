@@ -57,12 +57,14 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
+  gem 'pry'
   gem 'rspec-rails', '~> 5.0'
   gem 'slim-rails'
 end
 
 group :test do
   gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :development do
@@ -78,4 +80,8 @@ end
 
 gem 'rubocop', '~> 1.56'
 
-gem "simple_form", "~> 5.2"
+gem 'simple_form', '~> 5.2'
+
+gem 'faker', '~> 3.2'
+
+gem "redis", "~> 5.0"
